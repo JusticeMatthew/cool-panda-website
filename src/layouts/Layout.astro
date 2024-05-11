@@ -1,0 +1,60 @@
+---
+import '@/styles/global.css';
+import { AstroFont } from 'astro-font';
+import GradientBG from '@/components/GradientBG.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico?" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Cool Panda Theme</title>
+    <AstroFont
+      config={[
+        {
+          name: 'Teko',
+          src: [
+            {
+              style: 'normal',
+              weight: '400',
+              path: 'fonts/Teko.woff2',
+            },
+          ],
+          preload: true,
+          display: 'swap',
+          selector: '#teko',
+          fallback: 'sans-serif',
+        },
+      ]}
+    />
+    <AstroFont
+      config={[
+        {
+          name: 'Inter',
+          src: [
+            {
+              style: 'normal',
+              weight: '400',
+              path: 'fonts/Inter.woff2',
+            },
+          ],
+          preload: true,
+          display: 'swap',
+          selector: '#inter',
+          fallback: 'sans-serif',
+        },
+      ]}
+    />
+  </head>
+
+  <body id="inter">
+    <GradientBG />
+    <div id="shadow" class="bg-dark absolute left-0 top-0 z-10 h-screen w-2/5">
+    </div>
+    <div id="container">
+      <slot />
+    </div>
+  </body>
+</html>
