@@ -8,9 +8,9 @@ import coolPanda from '@/constants/Cool-Panda-color-theme.json';
 <Layout>
   <section
     id="inter"
-    class="flex h-screen w-full flex-row items-center justify-between"
+    class="tablet:flex-row tablet:justify-between flex w-full flex-col items-center justify-center max-md:my-3x md:min-h-screen"
   >
-    <div>
+    <div class="max-tablet:mb-huge">
       <h1 id="teko" class="text-headline whitespace-nowrap">
         <span class="group-hover:flashing-text">Cool</span> Panda
       </h1>
@@ -51,7 +51,7 @@ import coolPanda from '@/constants/Cool-Panda-color-theme.json';
       </div>
       `}
       lang="js"
-      class="bg-code text-min rounded p-medium pr-huge shadow"
+      class="bg-code text-min rounded p-medium pr-huge shadow max-md:w-full"
       theme={coolPanda}
     />
   </section>
