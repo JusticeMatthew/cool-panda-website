@@ -30,7 +30,7 @@ export default {
       colors: {
         light: '#f8fafc',
         dark: '#232323',
-        code: '#292a2b',
+        code: '#2f3133',
         teal: '#19f9d7',
       },
       fontSize: {
