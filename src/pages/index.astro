@@ -1,12 +1,56 @@
 ---
+import { Code } from 'astro:components';
 import Layout from '@/layouts/Layout.astro';
+import Button from '@/components/Button.astro';
+import coolPanda from '@/constants/Cool-Panda-color-theme.json';
 ---
 
 <Layout>
   <section
-    id="teko"
-    class="z-30 flex h-screen w-full items-center justify-center"
+    id="inter"
+    class="flex h-screen w-full flex-row items-center justify-between"
   >
-    <h1>Cool Panda</h1>
+    <div>
+      <h1 id="teko" class="text-headline whitespace-nowrap">Cool Panda</h1>
+      <p class="my-sl max-w-[45ch]">
+        A VS Code theme inspired by the classic <a
+          href="https://github.com/tinkertrain/panda-syntax-vscode"
+          class="text-teal underline underline-offset-2">Panda Syntax</a
+        >. Cool Panda offers cooler tones and full Typescript support for those
+        late night coding sessions.
+      </p>
+      <Button>Install with VS Code</Button>
+    </div>
+    <Code
+      code={`
+      ---
+      import { Houston, hug } from 'fake-astro-stuff';
+
+      hug.count = 0;
+      const container = document.querySelector('#container');
+
+      container.addEventListener('click', () => {
+        hug.count += 1;
+      });
+      ---
+
+      <div class="container">
+        {
+          hug.count >= 1 ? (
+            <Houston happy={true} >
+              <p>Ready for liftoff!</p>
+            </Houston>
+          ) : (
+            <Houston happy={false}>
+              <p>zzzzzz</p>
+            </Houston>
+          )
+        }
+      </div>
+      `}
+      lang="js"
+      class="bg-code text-min rounded p-medium shadow"
+      theme={coolPanda}
+    />
   </section>
 </Layout>

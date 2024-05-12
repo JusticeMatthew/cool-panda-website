@@ -2,6 +2,8 @@
 import '@/styles/global.css';
 import { AstroFont } from 'astro-font';
 import GradientBG from '@/components/GradientBG.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
 ---
 
 <html lang="en">
@@ -10,6 +12,15 @@ import GradientBG from '@/components/GradientBG.astro';
     <link rel="icon" href="/favicon.ico?" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="A Panda Syntax inspired theme for VS Code favoring cooler tones. TS Supported."
+    />
+    <meta property="og:title" content="Cool Panda" />
+    <meta
+      property="og:description"
+      content="A Panda Syntax inspired theme for VS Code favoring cooler tones. TS Supported."
+    />
     <title>Cool Panda Theme</title>
     <AstroFont
       config={[
@@ -50,11 +61,13 @@ import GradientBG from '@/components/GradientBG.astro';
   </head>
 
   <body id="inter">
+    <div id="container" class="z-50">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
     <GradientBG />
     <div id="shadow" class="bg-dark absolute left-0 top-0 z-10 h-screen w-2/5">
-    </div>
-    <div id="container">
-      <slot />
     </div>
   </body>
 </html>

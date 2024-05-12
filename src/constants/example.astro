@@ -1,0 +1,23 @@
+---
+import { Houston, hug } from 'astro:secret-stuff';
+
+const container = document.querySelector('#container');
+let hugCount = 0;
+
+container.addEventListener('click', () => {
+  hugCount + 1;
+});
+---
+
+<div class="container">
+  {
+    hugCount >= 1 ? (
+      <>
+        <Houston happy={true} />
+        <p>Ready for liftoff!</p>
+      </>
+    ) : (
+      <Houston happy={false} />
+    )
+  }
+</div>

@@ -23,8 +23,15 @@ export default {
     extend: {
       padding: spacing,
       margin: spacing,
+      gap: spacing,
       colors: {
         dark: '#232323',
+        code: '#292a2b',
+        teal: '#19f9d7',
+      },
+      fontSize: {
+        min: 'var(--step-00)',
+        headline: 'var(--step-8)',
       },
     },
   },
