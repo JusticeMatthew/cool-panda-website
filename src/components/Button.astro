@@ -1,5 +1,12 @@
-<button class="flashing-bg rounded p-3xs">
-  <div class="bg-dark w-full rounded px-huge py-small">
-    <slot />
-  </div>
+<button
+  class="flashing-bg hover:gradient-reverse rounded p-3xs transition-all duration-300"
+>
+  <a href="vscode:extension/MatthewJustice.cool-panda" class="h-full w-full">
+    <div
+      class="bg-dark gap-2xs flex w-full flex-row items-center rounded px-huge py-small"
+    >
+      <slot />
+      <img src="images/download.svg" alt="download" width={24} height={24} />
+    </div>
+  </a>
 </button>

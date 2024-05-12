@@ -21,17 +21,25 @@ export default {
   important: true,
   theme: {
     extend: {
+      screens: {
+        tablet: '1025px',
+      },
       padding: spacing,
       margin: spacing,
       gap: spacing,
       colors: {
+        light: '#f8fafc',
         dark: '#232323',
         code: '#292a2b',
         teal: '#19f9d7',
       },
       fontSize: {
         min: 'var(--step-00)',
+        button: 'var(--step-1)',
         headline: 'var(--step-8)',
+      },
+      backgroundImage: {
+        gradient: '',
       },
     },
   },

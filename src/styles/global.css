@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  @media (prefers-reduced-motion: no-preference) {
+    .gradient-reverse {
+      animation: move-bg 5s reverse linear infinite;
+    }
+
+    @keyframes move-bg {
+      to {
+        background-position: 500% 0;
+      }
+    }
+  }
+
+  .flashing-text {
+    background: linear-gradient(
+        90deg,
+        #6c84ff,
+        #19f9d7,
+        #ff75dd,
+        #6a2eb8,
+        #1271ff,
+        #6c84ff
+      )
+      0 0 / 500% 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .flashing-text {
+      animation: move-bg 20s linear infinite;
+    }
+
+    @keyframes move-bg {
+      to {
+        background-position: 500% 0;
+      }
+    }
+  }
+}
+
 :root {
   --step-00: clamp(0.844rem, 0.8533rem + -0.0106vi, 0.8511rem);
   --step-0: clamp(1rem, 0.9614rem + 0.1869vi, 1.125rem);
