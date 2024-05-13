@@ -60,7 +60,9 @@ import Footer from '@/components/Footer.astro';
         },
       ]}
     />
+
     <script
+      is:inline
       data-goatcounter="https://majic.goatcounter.com/count"
       async
       src="//gc.zgo.at/count.js"></script>
@@ -73,7 +75,7 @@ import Footer from '@/components/Footer.astro';
       <Footer />
     </div>
     <GradientBG />
-    <div id="shadow" class="bg-dark absolute left-0 top-0 z-10 h-screen w-2/5">
+    <div id="shadow" class="absolute left-0 top-0 z-10 h-screen w-2/5 bg-dark">
     </div>
   </body>
 </html>
