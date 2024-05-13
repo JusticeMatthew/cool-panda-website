@@ -20,7 +20,7 @@ export default function Tooltip({ children }) {
       >
         <div
           id="helper"
-          className="group whitespace-nowrap opacity-75 hover:cursor-help"
+          className="group whitespace-nowrap opacity-75 hover:cursor-pointer"
         >
           <p>Using Bracket Pair colorization?</p>
         </div>
