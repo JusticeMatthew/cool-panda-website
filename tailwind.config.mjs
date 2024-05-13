@@ -11,6 +11,7 @@ const spacing = {
   ml: 'var(--space-ml)',
   large: 'var(--space-l)',
   huge: 'var(--space-xl)',
+  lh: 'var(--space-l-xl)',
   '2x': 'var(--space-2xl)',
   '3x': 'var(--space-3xl)',
   '4x': 'var(--space-4xl)',
