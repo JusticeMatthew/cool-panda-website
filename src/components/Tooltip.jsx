@@ -10,8 +10,14 @@ export default function Tooltip({ children }) {
   return (
     <>
       <div
+        className={`${toggled() ? 'opacity-100' : 'opacity-0'} sticky bottom-12 my-xs max-w-min rounded bg-code px-medium py-small transition-all duration-150 max-md:py-medium`}
+      >
+        {children}
+      </div>
+      <div
         onClick={handleClick}
-        className="relative mt-medium max-w-min text-min max-sm:hidden"
+        onTouchStart={handleClick}
+        className="relative mt-medium max-w-min text-min"
       >
         <div
           id="helper"
@@ -19,11 +25,6 @@ export default function Tooltip({ children }) {
         >
           <p>Using Bracket Pair colorization?</p>
         </div>
-      </div>
-      <div
-        className={`${toggled() ? 'opacity-100' : 'opacity-0'} fixed my-xs rounded bg-code px-medium py-small transition-all duration-150`}
-      >
-        {children}
       </div>
     </>
   );

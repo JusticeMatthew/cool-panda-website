@@ -2,8 +2,6 @@
 import { Code } from 'astro:components';
 import Layout from '@/layouts/Layout.astro';
 import Button from '@/components/Button.astro';
-import Tooltip from '@/components/Tooltip.jsx';
-import CodeComponent from '@/components/CodeComponent.astro';
 import coolPanda from '@/constants/Cool-Panda-color-theme.json';
 ---
 
@@ -24,21 +22,22 @@ import coolPanda from '@/constants/Cool-Panda-color-theme.json';
         late night coding sessions.
       </p>
       <Button>Install with VS Code</Button>
-      <Tooltip client:idle>
-        <CodeComponent />
-      </Tooltip>
     </div>
     <Code
+      lang="astro"
+      class="rounded bg-code px-huge py-medium text-min shadow max-md:w-full"
+      theme={coolPanda}
       code={`
-import { Houston, hug } from "fake-astro-stuff";
+<script>
+  import { Houston, hug } from "fake-astro-stuff";
 
-hug.count = 0;
-const container = document.querySelector("#container");
+  hug.count = 0;
+  const container = document.querySelector("#container");
 
-container.addEventListener("click", () => {
-  hug.count += 1;
-});
-
+  container.addEventListener("click", () => {
+    hug.count += 1;
+  });
+</script>
 
 <div class="container">
   {
@@ -54,9 +53,6 @@ container.addEventListener("click", () => {
   }
 </div>
       `}
-      lang="js"
-      class="rounded bg-code px-huge py-medium text-min shadow max-md:w-full"
-      theme={coolPanda}
     />
   </section>
 </Layout>
