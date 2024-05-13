@@ -2,16 +2,18 @@
 import { Code } from 'astro:components';
 import Layout from '@/layouts/Layout.astro';
 import Button from '@/components/Button.astro';
+import Tooltip from '@/components/Tooltip.jsx';
+import CodeComponent from '@/components/CodeComponent.astro';
 import coolPanda from '@/constants/Cool-Panda-color-theme.json';
 ---
 
 <Layout>
   <section
     id="inter"
-    class="tablet:flex-row tablet:justify-between flex w-full flex-col items-center justify-center max-md:my-3x md:min-h-screen"
+    class="flex w-full flex-col items-center justify-center max-md:my-3x md:min-h-screen tablet:flex-row tablet:justify-between"
   >
     <div class="max-tablet:mb-huge">
-      <h1 id="teko" class="text-headline whitespace-nowrap">
+      <h1 id="teko" class="whitespace-nowrap text-headline">
         <span class="group-hover:flashing-text">Cool</span> Panda
       </h1>
       <p class="my-large max-w-[45ch]">
@@ -22,36 +24,38 @@ import coolPanda from '@/constants/Cool-Panda-color-theme.json';
         late night coding sessions.
       </p>
       <Button>Install with VS Code</Button>
+      <Tooltip client:idle>
+        <CodeComponent />
+      </Tooltip>
     </div>
     <Code
       code={`
-      ---
-      import { Houston, hug } from 'fake-astro-stuff';
+import { Houston, hug } from "fake-astro-stuff";
 
-      hug.count = 0;
-      const container = document.querySelector('#container');
+hug.count = 0;
+const container = document.querySelector("#container");
 
-      container.addEventListener('click', () => {
-        hug.count += 1;
-      });
-      ---
+container.addEventListener("click", () => {
+  hug.count += 1;
+});
 
-      <div class="container">
-        {
-          hug.count >= 1 ? (
-            <Houston happy={true} >
-              <p>Ready for liftoff!</p>
-            </Houston>
-          ) : (
-            <Houston happy={false}>
-              <p>zzzzzz</p>
-            </Houston>
-          )
-        }
-      </div>
+
+<div class="container">
+  {
+    hug.count >= 1 ? (
+      <Houston happy={true} >
+        <p>Ready for liftoff!</p>
+      </Houston>
+    ) : (
+      <Houston happy={false}>
+        <p>zzzzzz</p>
+      </Houston>
+    )
+  }
+</div>
       `}
       lang="js"
-      class="bg-code text-min rounded p-medium pr-huge shadow max-md:w-full"
+      class="rounded bg-code px-huge py-medium text-min shadow max-md:w-full"
       theme={coolPanda}
     />
   </section>

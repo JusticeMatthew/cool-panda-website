@@ -1,0 +1,25 @@
+---
+import { Code } from 'astro:components';
+import { CodeCopy } from 'astro-headless-ui';
+import coolPanda from '@/constants/Cool-Panda-color-theme.json';
+---
+
+<div class="text-min">
+  <p>Add this to your <code>settings.json</code> to keep things cool</p>
+  <Code
+    lang="json"
+    theme={coolPanda}
+    class="mt-small bg-code"
+    code=`
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#6FC1FF",
+    "editorBracketHighlight.foreground4": "#FF9AC1"
+  }
+  `
+  />
+  <CodeCopy
+    class="-translate-y-[57px] translate-x-[26px] rounded p-2xs hover:bg-light/10"
+  >
+    <img src="/images/copy.svg" alt="copy button" width={16} height={16} />
+  </CodeCopy>
+</div>
