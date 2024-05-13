@@ -15,7 +15,6 @@ export default function Tooltip({ children }) {
         {children}
       </div>
       <div
-        onPointerOver={handleClick}
         onPointerDown={handleClick}
         className="relative mt-medium max-w-min text-min"
       >
