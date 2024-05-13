@@ -10,7 +10,7 @@ export default function Tooltip({ children }) {
   return (
     <>
       <div
-        className={`${toggled() ? 'opacity-100' : 'opacity-0'} sticky bottom-12 my-xs max-w-min rounded bg-code px-medium py-small transition-all duration-150 max-md:py-medium`}
+        className={`${toggled() ? 'opacity-100' : 'opacity-0'} sticky my-xs max-w-min rounded bg-code px-medium py-small transition-all duration-150 max-md:py-medium`}
       >
         {children}
       </div>
