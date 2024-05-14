@@ -2,7 +2,8 @@ import { createSignal } from 'solid-js';
 
 const [toggled, setToggled] = createSignal(false);
 
-const handleClick = () => {
+const handleClick = (e) => {
+  e.preventDefault();
   setToggled(!toggled());
 };
 
