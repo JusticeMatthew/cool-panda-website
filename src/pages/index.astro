@@ -8,7 +8,7 @@ import coolPanda from '@/constants/Cool-Panda-color-theme.json';
 <Layout>
   <section
     id="inter"
-    class="flex w-full flex-col items-center justify-center max-md:my-3x md:min-h-screen tablet:flex-row tablet:justify-between"
+    class="flex w-full flex-col items-center justify-center max-md:my-3x md:min-h-screen lg:gap-40 tablet:flex-row tablet:justify-between"
   >
     <div class="max-tablet:mb-huge">
       <h1 id="teko" class="whitespace-nowrap text-headline">
@@ -25,28 +25,26 @@ import coolPanda from '@/constants/Cool-Panda-color-theme.json';
     </div>
     <Code
       lang="astro"
-      class="px-lh rounded bg-code py-medium text-min shadow max-md:w-full"
+      wrap
+      class="w-full rounded bg-code px-lh py-medium text-lg text-min shadow"
       theme={coolPanda}
       code={`
-<script>
-  import { Houston, hug } from "fake-astro-stuff";
+---
+let happyHouston = false;
 
-  hug.count = 0;
-  const container = document.querySelector("#container");
-
-  container.addEventListener("click", () => {
-    hug.count += 1;
-  });
-</script>
+if (theme.active === "cool-panda") {
+  happyHouston = true
+}
+---
 
 <div class="container">
   {
-    hug.count >= 1 ? (
-      <Houston happy={true} >
+    happyHouston ? (
+      <Houston>
         <p>Ready for liftoff!</p>
       </Houston>
     ) : (
-      <Houston happy={false}>
+      <Houston>
         <p>zzzzzz</p>
       </Houston>
     )
